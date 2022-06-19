@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<html>
+
+
+<head>
+		<title> NOTEPAD </title>
+		
+		<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body style="background-color:gray;">
+
+
+
+  <table collapsed id = 'testTable' >
+	<tr>
+		<td >**Ticket Number  :**</td>
+		<td><input type="Tnumber" style="background-color:lightgray;" id="Tnumber" >
+		
+		</td>
+		  
+		
+		
+		
+		
+    </tr>
+	
+	<tr>
+		<td>**Phone # :**</td>
+		<td><input type="phone" style="background-color:lightgray;" id="phone"></td>
+	</tr>
+	 <tr>
+		<td>**Domain Name :**</td>
+		<td><input type="Dname" style="background-color:lightgray;" id="Dname"></td>
+	</tr>
+   
+	<tr>
+		<td>**Full Name :**</td>
+		<td><input type="Fname" style="background-color:lightgray; " id="Fname"></td>
+	</tr>
+   
+	<tr>
+		<td>**Account Number :**</td>
+		<td><input type="Anumber" style="background-color:lightgray;" id="Anumber"></td>
+	</tr>
+	<tr>
+		<td>**Email :**</td>
+		<td><input type="Email" style="background-color:lightgray;" id="Email"></td>
+	</tr>
+   
+    
+   
+  
+   
+   <tr>
+		<td>**CX Authenticated ? :**</td>
+		<td>
+		<select name="AUTH" id="auth" style="background-color:lightgray;">
+			<option value="Clear" ></option>
+			<option value="Yes">YES</option>
+			<option value="No"> NO</option>
+		</select> :
+		<select name="Amethod" id="authMethod" style="background-color:lightgray;">
+			<option value="clear" ></option>
+			<option value="N/A"> N/A</option>
+			<option value="PIN"> PIN</option>
+			<option value="SQ">SQ</option>
+			<option value="2FA">2FA</option>
+			
+			
+		</select>
+		
+		</td>
+	 
+   </tr>
+   <tr>
+   
+    <td><label for="Issue" >**Issue :**</label></td>
+
+		<td><select name="Issue" id="issue" style="background-color:lightgray;">
+			<option value="Clear" ></option>
+			<option value="GeneralQ">General Questions</option>
+			<option value="AAccess">Account Access</option>
+			<option value="PER/PCR"> Password Reset</option>
+			<option value="Renewal ">Renewal</option>
+			<option value="Refund "> Chargeback Reversal  </option>
+			<option value="PER/PCR"> PER/PCR</option>
+			<option value="RNCA"> RNCA</option>
+			<option value="DNS">DNS/DNS Edit</option>
+			<option value="Refund">Refund</option>
+			<option value="Billing">Billing</option>
+			<option value="DomainTrasferIn">Domain Transfer In</option>
+			<option value="Billing">Domain Transfer Out</option>
+			<option value="Email">Email</option>
+			<option value="Hosting">Hosting</option>
+			<option value="WDown">Website Down</option>
+			<option value="WModification">Website Modification</option>
+			<option value="IVerification">ICANN Verification </option>
+			<option value="DLocks">Domain Locks</option>
+			<option value="SSL">SSL Certificate/Installation </option>
+			
+		</select></td>
+   </tr>
+   
+   <td>**Additional Notes  :**</td>
+    <td><textarea id="Anotes" name="Anotes" rows="22" cols="30" style="background-color:lightgray;">
+	</textarea></td>
+	 
+ <td> <br> </td>
+	  <tr>
+   
+    <td><label for="Cresult">**Case Result  :**</label></td>
+
+		<td><select name="Creason" id="cars" style="background-color:lightgray;">
+			<option value="Clear"></option>
+			<option value="Transfer">Transferred</option>
+			<option value="Escalated">Escalated</option>
+			<option value="Close ">Closed</option>
+		
+			
+			
+		</select></td>
+		</tr>
+	
+   
+
+  
+
+  </table>
+  </style>
+
+
+
+
+  
+   
+   
+   
+  
+  <button id = "button"  ><img src="pngegg.png"  width="20" height="20"></button>
+
+   <button onClick="window.location.reload();" ><img src="clear.jpg"  width="20" height="20"></button></br>
+	  
+  
+   
+
+ 	
+
+
+
+
+<script>
+let table = document.querySelector('#testTable');
+let button = document.querySelector('#button');
+
+function selectNode(node){
+  let range  =  document.createRange();
+  range.selectNodeContents(node)
+  let select =  window.getSelection()
+  select.removeAllRanges()
+  select.addRange(range)
+}
+button.addEventListener('click',function(){
+  selectNode(table);
+  document.execCommand('copy');
+  
+  
+})
+
+
+</script>
+
+
+ <span class="time" id="display" style="color:red" style="font-family:verdana"  >00:00:00</span>
+      </div>
+
+      <div class="controls">
+        <button class="buttonPlay">
+          <img id="playButton" src="https://res.cloudinary.com/https-tinloof-com/image/upload/v1593360448/blog/time-in-js/play-button_opkxmt.svg" height= "20" width="20" />
+
+          <img id="pauseButton" src="https://res.cloudinary.com/https-tinloof-com/image/upload/v1593360448/blog/time-in-js/pause-button_pinhpy.svg" height= "20" width="20" />
+        </button>
+
+        <button class="buttonReset">
+          <img id="resetButton" src="https://res.cloudinary.com/https-tinloof-com/image/upload/v1593360448/blog/time-in-js/reset-button_mdv6wf.svg" height= "18" width="20" />
+        </button>
+      </div>
+    </div>
+    <script src="js-timeout.js"></script>
+
+
+ 
+		
+		
+		
+</body>
+</html>
+
+
+
